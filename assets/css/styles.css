@@ -1,0 +1,192 @@
+/* Reset and basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #005232;
+    background-image: url('../images/4.png');
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+/* Section Container */
+.section-container, .container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+}
+
+/* Button Styling */
+.button {
+    width: 100%;
+    max-width: 400px;
+    padding: 15px;
+    background-color: #35353588;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.button:hover {
+    color: #000;
+    background-color: rgba(240, 248, 255, 0.479);
+}
+
+/* 3 Days Plan Layout */
+.three-section-container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+
+/* Section Styling */
+.three-section-container .section {
+    flex: 1;
+    display: flex;
+    flex-direction: column; /* Stack title and content vertically */
+    justify-content: center; /* Align items to the top */
+    align-items: center;
+    padding: 20px; /* Padding for section */
+    color: white;
+}
+
+/* Colors for each section */
+.section-1 { background-color:#9481ff4f; } /* Push */
+.section-2 { background-color: #f8f7ff4f; } /* Pull */
+.section-3 { background-color: #b8b8ff56; } /* Legs */
+
+/* Title Styling */
+.three-section-container .section h1 {
+    margin-bottom: 10px; /* Space between title and content */
+    font-size: 2rem; /* Make title larger */
+    font-weight: bold; /* Bold title */
+}
+
+/* Additional Content Styling */
+.additional-content {
+    display: flex;
+    flex-direction: column; /* Stack exercises vertically */
+    margin-top: 10px; /* Space between title and content */
+    text-align: left; /* Align text to the left */
+}
+
+/* Workout Details */
+.additional-content p {
+    margin: 5px 0; /* Space between exercises */
+    font-size: 1.2rem; /* Adjust font size */
+}
+
+/* Expanded Section */
+.expanded-section {
+    display: flex; /* Use flexbox for layout */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: white; /* Text color */
+    align-items: flex-start; /* Align content to the top */
+    justify-content: center; /* Center content horizontally */
+    padding: 20px; /* Add padding around the content */
+}
+
+/* Close Button */
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #ff6b6b;
+    padding: 5px 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Slide animations */
+@keyframes slide-out-left {
+    0% { opacity: 1; transform: translateX(0); }
+    100% { opacity: 0; transform: translateX(-100vw); }
+}
+
+@keyframes slide-in-right {
+    0% { opacity: 0; transform: translateX(100vw); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+/* New slide animations for back navigation */
+@keyframes slide-out-right {
+    0% { opacity: 1; transform: translateX(0); }
+    100% { opacity: 0; transform: translateX(100vw); }
+}
+
+@keyframes slide-in-left {
+    0% { opacity: 0; transform: translateX(-100vw); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+/* Apply animations */
+.slide-out-left {
+    animation: slide-out-left 0.5s forwards;
+}
+
+.slide-in-right {
+    animation: slide-in-right 0.5s forwards;
+}
+
+.slide-out-right {
+    animation: slide-out-right 0.5s forwards;
+}
+
+.slide-in-left {
+    animation: slide-in-left 0.5s forwards;
+}
+
+/* Responsive layout for 3 Days Plan */
+@media (min-width: 768px) {
+    .three-section-container {
+        flex-direction: row; /* Horizontal on desktop */
+    }
+}
+
+@media (max-width: 767px) {
+    .three-section-container {
+        flex-direction: column; /* Vertical on mobile */
+    }
+}
+
+/* Back button styling */
+.back-button {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 10; /* Ensures it appears in front of other content */
+}
+
+/* Optional: Add hover effect */
+.back-button:hover {
+    color: #ff6b6b; /* Change color on hover */
+}
+
+/* Remove pointer events for workout sections */
+.three-section-container .section {
+    pointer-events: none; /* Disable pointer events */
+}

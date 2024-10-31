@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Workout Zone</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    
+  <!-- Back Button (global, outside other containers) -->
+  <button class="back-button" id="globalBackButton">
+    <i class="fa-solid fa-arrow-left"></i>
+  </button>
+
+  <!-- Initial screen with Workout Zone and Food Zone buttons -->
+  <div class="container section-container">
+    <button class="button" id="buttonA">Workout Zone</button>
+    <button class="button" id="buttonB">Food Zone</button>
+  </div>
+
+  <!-- Workout Zone: 3 Days Plan and 4 Days Plan options -->
+  <div id="newSectionA" class="section-container" style="display: none;">
+    <button class="button" id="option1">Andra's Plan</button>
+    <button class="button">4 Days Plan</button>
+  </div>
+
+  <!-- Food Zone placeholder -->
+  <div id="newSectionB" class="section-container" style="display: none;">
+    <button class="button">Option 3</button>
+    <button class="button">Option 4</button>
+  </div>
+
+  <!-- 3 Days Plan View -->
+  <div id="threeDaysPlan" class="three-section-container" style="display: none;">
+    <div class="section section-1" data-section="1">
+      <h1>Glutes</h1>
+      <div class="additional-content">
+        <p>Barbell hip thrust  --  4x10</p>
+        <p>Dumbbell step-up  -- 5x8</p>
+        <p>Leg curls  -- 3x12 </p>
+        <p>Side plank leg raises -- 3x12</p>
+        <p>Hanging knee raises -- 3x Failure</p>
+      </div>
+    </div>
+    <div class="section section-2" data-section="2">
+      <h1>Quads</h1>
+      <div class="additional-content">
+        <p>Leg extension  -- 3x10</p>
+        <p>Walking lunge -- 3x20</p>
+        <p>Hip adduction -- 3x15</p>
+        <p>Press calf raise -- 3x Failure </p>
+        <p>Cross mountain climbers -- 3x Failure</p>
+      </div>
+    </div>
+    <div class="section section-3" data-section="3">
+      <h1>Push & Pull</h1>
+      <div class="additional-content">
+        <p>	Push Ups -- 3x8 </p>
+        <p>Pull Ups -- 3x8</p>
+        <p>Machine row -- 5x12</p>
+        <p>Military press -- 3x15 </p>
+        <p>Barbell curls -- 3x10</p>
+        <p>Cable tricep extensions -- 3x15</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Full-screen expanded view for a section (can be removed if not needed) -->
+  <div id="expandedView" class="expanded-section" style="display: none;">
+    <div id="expandedContent"></div>
+  </div>
+
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
