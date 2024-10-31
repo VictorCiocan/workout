@@ -168,7 +168,7 @@ body, html {
     .three-section-container {
         flex-direction: column; /* Vertical on mobile */
         overflow-y: auto; /* Allow vertical scrolling */
-        padding-bottom: 30px;
+        padding-bottom: 40px;
        
     }
     
