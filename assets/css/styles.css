@@ -70,6 +70,7 @@ body, html {
 .section-1 { background-color:#9481ff4f; } /* Push */
 .section-2 { background-color: #f8f7ff4f; } /* Pull */
 .section-3 { background-color: #b8b8ff52; } /* Legs */
+.section-4 { background-image: #01673b52; } 
 
 /* Title Styling */
 .three-section-container .section h1 {
@@ -168,8 +169,8 @@ body, html {
     .three-section-container {
         flex-direction: column; /* Vertical on mobile */
         overflow-y: auto; /* Allow vertical scrolling */
-        padding-bottom: 60px;
-       
+        padding-bottom: 65px; /* Extra padding at the bottom on mobile */
+      
     }
     
 }

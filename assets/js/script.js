@@ -4,15 +4,22 @@ const buttonB = document.getElementById('buttonB');
 const newSectionA = document.getElementById('newSectionA');
 const newSectionB = document.getElementById('newSectionB');
 const threeDaysPlan = document.getElementById('threeDaysPlan');
+const fourDaysPlan = document.getElementById('fourDaysPlan');
 const globalBackButton = document.getElementById('globalBackButton');
+const option1 = document.getElementById('option1'); // 3 Days Plan button
+const option2 = document.getElementById('option2'); // 4 Days Plan button
 
 // Set initial visibility for the back button
 globalBackButton.style.display = 'none'; // Hide initially
 
 // Helper functions to show and hide sections with animations
 function hideSection(section, callback, isBack = false) {
-  section.classList.add(isBack ? 'slide-out-right' : 'slide-out-left'); // Slide out depending on direction
-  
+  if (isBack) {
+    section.classList.add('slide-out-right'); // Slide out to the right when going back
+  } else {
+    section.classList.add('slide-out-left'); // Default: slide out to the left
+  }
+
   setTimeout(() => {
     section.style.display = 'none';
     section.classList.remove(isBack ? 'slide-out-right' : 'slide-out-left');
@@ -22,8 +29,12 @@ function hideSection(section, callback, isBack = false) {
 
 function showSection(section, isBack = false) {
   section.style.display = 'flex';
-  section.classList.add(isBack ? 'slide-in-left' : 'slide-in-right'); // Slide in depending on direction
-  
+  if (isBack) {
+    section.classList.add('slide-in-left'); // Slide in from the left when going back
+  } else {
+    section.classList.add('slide-in-right'); // Default: slide in from the right
+  }
+
   setTimeout(() => {
     section.classList.remove(isBack ? 'slide-in-left' : 'slide-in-right');
   }, 500); // Match this timing with CSS animation duration
@@ -37,7 +48,7 @@ function toggleBackButton(show) {
 // Initial screen events for Workout Zone and Food Zone
 buttonA.addEventListener('click', () => {
   hideSection(document.querySelector('.container'), () => {
-    showSection(newSectionA); // Show 3 Days Plan and 4 Days Plan options
+    showSection(newSectionA);
     toggleBackButton(true); // Show back button
   });
 });
@@ -50,25 +61,26 @@ buttonB.addEventListener('click', () => {
 });
 
 // 3 Days Plan selection
-document.getElementById('option1').addEventListener('click', () => {
+option1.addEventListener('click', () => {
   hideSection(newSectionA, () => showSection(threeDaysPlan));
+});
+
+// 4 Days Plan selection
+option2.addEventListener('click', () => {
+  hideSection(newSectionA, () => showSection(fourDaysPlan));
 });
 
 // Global Back Button event to handle navigation
 globalBackButton.addEventListener('click', () => {
-  // Hide specific sections based on which is visible
   if (threeDaysPlan.style.display === 'flex') {
-    hideSection(threeDaysPlan, () => showSection(newSectionA, true), true); // Going back
+    hideSection(threeDaysPlan, () => showSection(newSectionA, true), true); // Going back from 3 Days Plan
+  } else if (fourDaysPlan.style.display === 'flex') {
+    hideSection(fourDaysPlan, () => showSection(newSectionA, true), true); // Going back from 4 Days Plan
   } else if (newSectionA.style.display === 'flex') {
-    hideSection(newSectionA, () => showSection(document.querySelector('.container'), true), true); // Going back
+    hideSection(newSectionA, () => showSection(document.querySelector('.container'), true), true); // Going back to main
     toggleBackButton(false); // Hide back button when returning to main options
   } else if (newSectionB.style.display === 'flex') {
-    hideSection(newSectionB, () => showSection(document.querySelector('.container'), true), true); // Going back
+    hideSection(newSectionB, () => showSection(document.querySelector('.container'), true), true); // Going back to main
     toggleBackButton(false); // Hide back button when returning to main options
   }
-});
-
-// Remove any click event listeners from the workout sections
-threeDaysPlan.querySelectorAll('.section').forEach((section) => {
-    section.style.pointerEvents = 'none'; // Disable pointer events to make sections non-clickable
 });
