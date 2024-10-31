@@ -10,7 +10,7 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #005232;
+    background-color: #1b211f;
     background-image: url('../images/4.png');
     overflow: hidden;
     font-family: Arial, sans-serif;
@@ -53,6 +53,7 @@ body, html {
     width: 100vw;
     height: 100vh;
     overflow-y: auto; /* Allow vertical scrolling */
+    
 }
 
 /* Section Styling */
@@ -166,7 +167,11 @@ body, html {
 @media (max-width: 767px) {
     .three-section-container {
         flex-direction: column; /* Vertical on mobile */
+        overflow-y: auto; /* Allow vertical scrolling */
+        padding-bottom: 20px; /* Extra padding at the bottom on mobile */
+        height: calc(100vh + 50px); /* Increase height for extra scroll space */
     }
+    
 }
 
 /* Back button styling */
