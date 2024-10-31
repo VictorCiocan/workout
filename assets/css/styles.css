@@ -52,6 +52,7 @@ body, html {
     display: flex;
     width: 100vw;
     height: 100vh;
+    overflow-y: auto; /* Allow vertical scrolling */
 }
 
 /* Section Styling */
@@ -59,8 +60,7 @@ body, html {
     flex: 1;
     display: flex;
     flex-direction: column; /* Stack title and content vertically */
-    justify-content: center; /* Align items to the top */
-    align-items: center;
+    justify-content: flex-start; /* Align items to the top */
     padding: 20px; /* Padding for section */
     color: white;
 }
@@ -68,13 +68,14 @@ body, html {
 /* Colors for each section */
 .section-1 { background-color:#9481ff4f; } /* Push */
 .section-2 { background-color: #f8f7ff4f; } /* Pull */
-.section-3 { background-color: #b8b8ff56; } /* Legs */
+.section-3 { background-color: #b8b8ff52; } /* Legs */
 
 /* Title Styling */
 .three-section-container .section h1 {
     margin-bottom: 10px; /* Space between title and content */
     font-size: 2rem; /* Make title larger */
     font-weight: bold; /* Bold title */
+    text-align: center; /* Center title */
 }
 
 /* Additional Content Styling */
@@ -82,7 +83,7 @@ body, html {
     display: flex;
     flex-direction: column; /* Stack exercises vertically */
     margin-top: 10px; /* Space between title and content */
-    text-align: left; /* Align text to the left */
+    text-align: center; /* Align text to the center */
 }
 
 /* Workout Details */
