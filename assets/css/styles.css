@@ -53,7 +53,6 @@ body, html {
     width: 100vw;
     height: 100vh;
     overflow-y: auto; /* Allow vertical scrolling */
-    
 }
 
 /* Section Styling */
@@ -67,10 +66,10 @@ body, html {
 }
 
 /* Colors for each section */
-.section-1 { background-color:#9481ff4f; } /* Push */
+.section-1 { background-color: #9481ff4f; } /* Push */
 .section-2 { background-color: #f8f7ff4f; } /* Pull */
 .section-3 { background-color: #b8b8ff52; } /* Legs */
-.section-4 { background-image: #01673b52; } 
+.section-4 { background-color: #01673b52; } 
 
 /* Title Styling */
 .three-section-container .section h1 {
@@ -118,6 +117,76 @@ body, html {
     font-size: 1.5rem;
     cursor: pointer;
 }
+
+.food-grid {
+    display: flex;
+    flex-direction: column; /* Stack items in a single column */
+    gap: 20px;
+    padding: 20px;
+    width: 100%;
+    max-width: 500px;
+    height: 100vh; /* Full viewport height */
+    overflow-y: auto; /* Enables vertical scrolling */
+    scroll-behavior: smooth; /* Smooth scrolling */
+    padding-bottom: 20px; /* Extra padding at the bottom */
+}
+
+/* Food Item Styling */
+.food-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #444;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #35353588;
+    transition: max-height 0.3s ease; /* Smooth transition */
+    
+}
+
+.food-info {
+    display: flex;
+    flex-direction: row; /* Image and title in a row when collapsed */
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Space between image and text */
+    margin-bottom: 10px;
+}
+
+/* Food Image */
+.food-image {
+    width: 80px;
+    height: 80px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    margin-right: 15px;
+    margin-bottom: 0;
+}
+
+/* Food Item Text Color */
+.food-info h2,
+.food-info h3,
+.food-info p,
+.food-extra p,
+.food-extra h3 {
+    color: white; /* Set text color to white */
+}
+
+/* Collapsible Extra Content */
+.food-extra {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease; /* Smooth expand/collapse */
+}
+
+/* Expanded state */
+.food-item.active .food-extra {
+    max-height: 300px;
+}
+
+
 
 /* Slide animations */
 @keyframes slide-out-left {
@@ -170,9 +239,7 @@ body, html {
         flex-direction: column; /* Vertical on mobile */
         overflow-y: auto; /* Allow vertical scrolling */
         padding-bottom: 65px; /* Extra padding at the bottom on mobile */
-      
     }
-    
 }
 
 /* Back button styling */
@@ -191,9 +258,4 @@ body, html {
 /* Optional: Add hover effect */
 .back-button:hover {
     color: #ff6b6b; /* Change color on hover */
-}
-
-/* Remove pointer events for workout sections */
-.three-section-container .section {
-    pointer-events: none; /* Disable pointer events */
 }

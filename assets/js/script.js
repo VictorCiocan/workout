@@ -5,9 +5,12 @@ const newSectionA = document.getElementById('newSectionA');
 const newSectionB = document.getElementById('newSectionB');
 const threeDaysPlan = document.getElementById('threeDaysPlan');
 const fourDaysPlan = document.getElementById('fourDaysPlan');
+const foodGrid = document.getElementById('foodGrid');
 const globalBackButton = document.getElementById('globalBackButton');
 const option1 = document.getElementById('option1'); // 3 Days Plan button
 const option2 = document.getElementById('option2'); // 4 Days Plan button
+const breakfastButton = document.getElementById('breakfastButton');
+const lunchDinnerButton = document.getElementById('lunchDinnerButton');
 
 // Set initial visibility for the back button
 globalBackButton.style.display = 'none'; // Hide initially
@@ -70,12 +73,33 @@ option2.addEventListener('click', () => {
   hideSection(newSectionA, () => showSection(fourDaysPlan));
 });
 
+// Food Zone options - Breakfast and Lunch/Dinner
+breakfastButton.addEventListener('click', () => {
+  hideSection(newSectionB, () => showSection(foodGrid));
+});
+
+lunchDinnerButton.addEventListener('click', () => {
+  hideSection(newSectionB, () => showSection(foodGrid));
+});
+
+// JavaScript to toggle expansion on click
+document.querySelectorAll('.food-item').forEach(item => {
+  item.addEventListener('click', () => {
+    // Toggle the active class for expand/collapse effect
+    item.classList.toggle('active');
+  });
+});
+
+
+
 // Global Back Button event to handle navigation
 globalBackButton.addEventListener('click', () => {
   if (threeDaysPlan.style.display === 'flex') {
     hideSection(threeDaysPlan, () => showSection(newSectionA, true), true); // Going back from 3 Days Plan
   } else if (fourDaysPlan.style.display === 'flex') {
     hideSection(fourDaysPlan, () => showSection(newSectionA, true), true); // Going back from 4 Days Plan
+  } else if (foodGrid.style.display === 'flex') {
+    hideSection(foodGrid, () => showSection(newSectionB, true), true); // Going back from Food Grid
   } else if (newSectionA.style.display === 'flex') {
     hideSection(newSectionA, () => showSection(document.querySelector('.container'), true), true); // Going back to main
     toggleBackButton(false); // Hide back button when returning to main options
@@ -84,3 +108,8 @@ globalBackButton.addEventListener('click', () => {
     toggleBackButton(false); // Hide back button when returning to main options
   }
 });
+
+
+
+
+

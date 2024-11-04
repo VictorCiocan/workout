@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Workout Zone</title>
+  <title>Workout and Food Zone</title>
   <link rel="stylesheet" href="assets/css/styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
@@ -26,16 +26,90 @@
     <button class="button" id="option2">Victor's Plan</button>
   </div>
 
-  <!-- Food Zone placeholder -->
+  <!-- Food Zone options -->
   <div id="newSectionB" class="section-container" style="display: none;">
-    <button class="button">Option 3</button>
-    <button class="button">Option 4</button>
+    <button class="button" id="breakfastButton">Breakfast</button>
+    <button class="button" id="lunchDinnerButton">Lunch/Dinner</button>
   </div>
+
+ <!-- Food Zone Grid Layout -->
+ <div id="foodGrid" class="food-grid" style="display: none;">
+  <!-- Sample Food Item -->
+  <div class="food-item">
+    
+    <div class="food-info">
+      <img src="assets/images/avocado.jpg" alt="Avocado Toast" class="food-image">
+      <h2>Avocado Toast</h2>
+      <!-- <p>Calories: 250 kcal</p>
+      <p>Protein: 8g</p> -->
+    </div>
+    <div class="food-extra">
+      <p>Calories: 250 kcal</p>
+      <p>Protein: 8g</p>
+    </br>
+      <h3><strong>Ingredients:</strong> </h3>
+      <p>Avocado</p>
+      <p>Toast</p>
+      <p>Salt</p>
+      <p>Pepper</p>
+    </br>
+      <h3><strong>Steps</strong></h3>
+
+      <p>Spread avocado on toast, season with salt and pepper.</p>
+    </div>
+  </div>
+  <!-- Additional food items go here -->
+  <div class="food-item">
+    <div class="food-info">
+      <img src="assets/images/yogurt_parfait.jpg" alt="Yogurt Parfait" class="food-image">
+      <h2>Yogurt Parfait</h2>
+    </div>
+    <div class="food-extra">
+      <p>Calories: 200 kcal</p>
+      <p>Protein: 10g</p>
+      <br>
+      <h3><strong>Ingredients:</strong></h3>
+      <p>Greek yogurt</p>
+      <p>Granola</p>
+      <p>Honey</p>
+      <p>Mixed berries</p>
+      <br>
+      <h3><strong>Steps:</strong></h3>
+      <p>Layer yogurt, granola, and berries in a glass. Drizzle with honey and serve.</p>
+    </div>
+</div>
+
+<div class="food-item">
+    <div class="food-info">
+      <img src="assets/images/oatmeal.jpg" alt="Oatmeal with Berries" class="food-image">
+      <h2>Oatmeal with Berries</h2>
+    </div>
+    <div class="food-extra">
+      <p>Calories: 300 kcal</p>
+      <p>Protein: 12g</p>
+      <br>
+      <h3><strong>Ingredients:</strong></h3>
+      <p>Rolled oats</p>
+      <p>Milk or water</p>
+      <p>Mixed berries</p>
+      <p>Almonds</p>
+      <p>Honey</p>
+      <br>
+      <h3><strong>Steps:</strong></h3>
+      <p>Cook oats with milk or water. Top with berries, almonds, and a drizzle of honey.</p>
+    </div>
+</div>
+
+   
+
+</div>
+  
 
   <!-- 3 Days Plan View -->
   <div id="threeDaysPlan" class="three-section-container" style="display: none;">
     <div class="section section-1" data-section="1">
-      <h1>Glutes</h1>
+      <h1>Glutes</h1>  
+      
       <div class="additional-content">
         <p>Barbell hip thrust -- 4x10</p>
         <p>Dumbbell step-up -- 5x8</p>
@@ -81,7 +155,7 @@
       </div>
     </div>
     <div class="section section-2" data-section="2">
-      <h1>Upper Body </h1>
+      <h1>Upper Body</h1>
       <div class="additional-content">
         <p>Barbell Bench Press -- 4x8</p>
         <p>Pull-Ups (or Lat Pulldown) -- 4x8</p>
@@ -102,7 +176,7 @@
       </div>
     </div>
     <div class="section section-4" data-section="4">
-      <h1>Upper Body </h1>
+      <h1>Upper Body</h1>
       <div class="additional-content">
         <p>Incline Dumbbell Press -- 4x10</p>
         <p>Seated Row (Cable or Machine) -- 4x10</p>
